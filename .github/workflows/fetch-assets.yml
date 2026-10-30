@@ -1,0 +1,25 @@
+name: Pull in photos and film
+on:
+  push:
+    branches: [main]
+    paths: ["scripts/assets-manifest.json"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-save sharp@0.34.2
+      - run: node scripts/fetch-assets.mjs
+      - name: Save to the repo
+        run: |
+          git config user.name "tallo-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add public/assets
+          git diff --cached --quiet || git commit -m "Add photos and film"
+          git push
