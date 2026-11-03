@@ -26,7 +26,7 @@
 *, *::before, *::after { box-sizing: border-box; }
 html, body { margin: 0; }
 html { scroll-behavior: smooth; }
-body { background: var(--t-pasture); }
+body { background: var(--t-pasture); font-family: var(--t-body); color: var(--t-ink); -webkit-font-smoothing: antialiased; }
 
 .t-site {
   background: var(--t-pasture);
@@ -360,7 +360,9 @@ body { background: var(--t-pasture); }
 .t-ship-note ul { margin: 0; padding-left: 1.1rem; }
 .t-thanks { padding-top: 8rem; min-height: 70vh; }
 
-.t-drawer { position: fixed; inset: 0; z-index: 80; pointer-events: none; }
+.t-drawer { position: fixed; inset: 0; z-index: 80; pointer-events: none; font-family: var(--t-body); font-size: 1rem; line-height: 1.5; }
+.t-drawer *, .t-drawer *::before, .t-drawer *::after { box-sizing: border-box; }
+.t-drawer img { display: block; }
 .t-drawer[data-open="true"] { pointer-events: auto; }
 .t-drawer__scrim { position: absolute; inset: 0; border: 0; background: color-mix(in srgb, var(--t-pasture) 55%, transparent); opacity: 0; transition: opacity 0.2s ease; cursor: pointer; }
 .t-drawer[data-open="true"] .t-drawer__scrim { opacity: 1; }
