@@ -129,7 +129,7 @@ export default function BrandPage() {
           <div className="t-wrap">
             <h2 id="pack-title" className="t-h2">Packaging</h2>
             <p className="t-brand__note t-brand__note--dark">
-              5 oz stand-up pouch with a flat gusseted bottom, press-to-close zip, and tear notch. Matte paper-texture
+              8 oz full-size stand-up pouch with a flat gusseted bottom, press-to-close zip, and tear notch. Matte paper-texture
               stock, Yam wordmark at the top, mark centered, flavor band across the bottom with the organic seal.
             </p>
             <div className="t-pack-grid">

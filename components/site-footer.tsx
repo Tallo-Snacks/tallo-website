@@ -9,6 +9,7 @@ export function SiteFooter() {
         <TalloLockup className="t-footer__logo" />
         <p className="t-mono t-footer__line">Organic sweet potatoes · Grass-fed beef tallow · Sea salt</p>
         <nav className="t-footer__nav" aria-label="Footer">
+          <Link href="/shop">Shop</Link>
           <Link href="/#flavors">Flavors</Link>
           <Link href="/#faq">FAQ</Link>
           <Link href="/brand">Brand kit</Link>

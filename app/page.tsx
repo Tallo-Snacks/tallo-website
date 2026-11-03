@@ -1,4 +1,6 @@
 import { FlavorPick } from "@/components/flavor-pick";
+import { AddToBag } from "@/components/cart";
+import { storeOpen } from "@/lib/stripe";
 import { TalloMark } from "@/components/logo";
 import { ScrollFilm, type Chapter } from "@/components/scroll-film";
 import { SiteFooter } from "@/components/site-footer";
@@ -36,7 +38,7 @@ const CHAPTERS: Chapter[] = [
     body: "Flip the bag over. You will recognize every word on it.",
     actions: (
       <div className="t-chapter-actions">
-        <a href="#waitlist" className="t-tear-cta">
+        <a href={process.env.NEXT_PUBLIC_STORE_OPEN === "true" ? "/shop" : "#waitlist"} className="t-tear-cta">
           Get the first batch
         </a>
         <a href="#flavors" className="t-arrow-link">
@@ -62,11 +64,12 @@ const FAQ = [
   { q: "Are Tallo chips greasy?", a: "No. We cook in small batches and drain every batch well, so the chips come out light, dry, and crisp, not oily." },
   { q: "Are Tallo chips vegetarian?", a: "No. Tallow comes from beef, so these are not vegetarian or vegan." },
   { q: "Are they gluten free?", a: "None of our three ingredients contain gluten. We will publish our facility and certification details before the first batch ships." },
-  { q: "What size is the bag?", a: "A 5 oz (142 g) stand-up pouch with a zip reseal, so the last chip is as crisp as the first." },
+  { q: "What size is the bag?", a: "A full-size 8 oz (227 g) stand-up pouch with a zip reseal, so the last chip is as crisp as the first." },
   { q: "When can I buy them?", a: "The first batch is small. Join the list and you will get one email the day it opens, before anyone else." },
 ];
 
 export default function Home() {
+  const open = storeOpen();
   return (
     <div className="t-site">
       <SiteNav />
@@ -99,7 +102,7 @@ export default function Home() {
                 on the tailgate. Zip it shut and they stay crisp.
               </p>
               <dl className="t-specs">
-                <div><dt>Net wt</dt><dd>5 oz (142 g)</dd></div>
+                <div><dt>Net wt</dt><dd>8 oz (227 g)</dd></div>
                 <div><dt>Cooked in</dt><dd>Grass-fed beef tallow</dd></div>
                 <div><dt>Potato</dt><dd>Organic sweet potato</dd></div>
                 <div><dt>Closure</dt><dd>Press-to-close zip</dd></div>
@@ -134,7 +137,7 @@ export default function Home() {
                   <h3 className="t-flavor__name">{f.name}</h3>
                   <p className="t-flavor__note">{f.note}</p>
                   <p className="t-flavor__pairs"><span>Goes with</span> {f.pairs}</p>
-                  <FlavorPick flavor={f.id} label={f.name} />
+                  {open ? <AddToBag id={f.id} label={`Add ${f.name} to bag`} /> : <FlavorPick flavor={f.id} label={f.name} />}
                 </li>
               ))}
             </ul>
