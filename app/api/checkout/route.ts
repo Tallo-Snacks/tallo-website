@@ -62,7 +62,9 @@ export async function POST(req: Request) {
   const shipping = shippingFor(bags, subtotal);
   const site = process.env.NEXT_PUBLIC_SITE_URL ?? new URL(req.url).origin;
 
-  const session = await stripe.checkout.sessions.create({
+  let session;
+  try {
+  session = await stripe.checkout.sessions.create({
     mode: "payment",
     line_items: items.map((i) => ({
       quantity: i.qty,
@@ -91,6 +93,10 @@ export async function POST(req: Request) {
     success_url: `${site}/order/success?session_id={CHECKOUT_SESSION_ID}`,
     cancel_url: `${site}/shop`,
   });
+  } catch (err) {
+    console.error("checkout failed", err);
+    return NextResponse.json({ error: "Checkout couldn't open just now. Try again in a minute." }, { status: 502 });
+  }
 
   return NextResponse.json({ url: session.url });
 }

@@ -1,18 +1,13 @@
 import type { Metadata, Viewport } from "next";
-import { Bricolage_Grotesque, DM_Mono, Fraunces } from "next/font/google";
+import { DM_Mono, Instrument_Sans, Schibsted_Grotesk } from "next/font/google";
 
 import { CartProvider } from "@/components/cart";
 import { storeOpen } from "@/lib/stripe";
 
 import "./globals.css";
 
-const display = Fraunces({
-  subsets: ["latin"],
-  axes: ["SOFT", "WONK", "opsz"],
-  variable: "--font-display",
-  display: "swap",
-});
-const body = Bricolage_Grotesque({ subsets: ["latin"], variable: "--font-body", display: "swap" });
+const display = Schibsted_Grotesk({ subsets: ["latin"], variable: "--font-display", display: "swap" });
+const body = Instrument_Sans({ subsets: ["latin"], variable: "--font-body", display: "swap" });
 const mono = DM_Mono({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-mono", display: "swap" });
 
 export const metadata: Metadata = {

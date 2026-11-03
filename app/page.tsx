@@ -115,10 +115,10 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="t-band t-band--pasture" id="flavors" aria-labelledby="flavors-title">
+        <section className="t-band t-band--white" id="flavors" aria-labelledby="flavors-title">
           <div className="t-wrap">
             <div className="t-section-head">
-              <p className="t-eyebrow t-eyebrow--yam">The lineup</p>
+              <p className="t-eyebrow">The lineup</p>
               <h2 id="flavors-title" className="t-h2">Three bags. Same three-ingredient rule.</h2>
             </div>
             <figure className="t-lineup">
@@ -196,10 +196,10 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="t-band t-band--pasture" aria-labelledby="wild-title">
+        <section className="t-band t-band--white" aria-labelledby="wild-title">
           <div className="t-wrap">
             <div className="t-section-head">
-              <p className="t-eyebrow t-eyebrow--yam">Out in the wild</p>
+              <p className="t-eyebrow">Out in the wild</p>
               <h2 id="wild-title" className="t-h2">Built for tailgates, trailheads, and the kitchen table.</h2>
             </div>
             <div className="t-mosaic">

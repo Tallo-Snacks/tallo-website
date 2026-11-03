@@ -43,7 +43,7 @@ export default function BrandPage() {
         <section className="t-band t-band--butter t-brand__hero">
           <div className="t-wrap">
             <p className="t-eyebrow">Brand kit · v1 · October 2026</p>
-            <h1 className="t-brand__title">Tallo</h1>
+            <h1 className="t-brand__title"><span className="t-sr">Tallo</span><TalloWordmark className="t-brand__wordmark" /></h1>
             <p className="t-lede">
               Organic sweet potato chips, kettle cooked in grass-fed beef tallow. This page is the source of truth for
               how Tallo looks and sounds.
@@ -102,8 +102,8 @@ export default function BrandPage() {
           <div className="t-wrap">
             <h2 id="type-title" className="t-h2">Type</h2>
             <div className="t-type-grid">
-              <div className="t-type-card"><span className="t-mono">Display · Fraunces Black, Soft 100</span><p className="t-type-card__display">A clean, traditional fat.</p></div>
-              <div className="t-type-card"><span className="t-mono">Body · Bricolage Grotesque</span><p className="t-type-card__body">Thick-cut, kettle-cooked sweet potato chips in a pouch that stands on the shelf and zips shut.</p></div>
+              <div className="t-type-card"><span className="t-mono">Headlines · Schibsted Grotesk Bold</span><p className="t-type-card__display">A clean, traditional fat.</p></div>
+              <div className="t-type-card"><span className="t-mono">Body · Instrument Sans</span><p className="t-type-card__body">Thick-cut, kettle-cooked sweet potato chips in a pouch that stands on the shelf and zips shut.</p></div>
               <div className="t-type-card"><span className="t-mono">Label · DM Mono</span><p className="t-mono t-type-card__mono">INGREDIENTS: ORGANIC SWEET POTATOES, GRASS-FED BEEF TALLOW, SEA SALT.</p></div>
             </div>
           </div>
