@@ -18,7 +18,7 @@ The two founders edit it through Claude Code / Cowork and are not developers, so
 
 ## Brand rules (keep these when editing)
 - Palette: Pasture `#0F1F17`, Butter `#F7E7B4`, Paper `#FBF3DF`, Yam `#E8641E` (the only accent).
-  Flavor band colors (Sea Salt `#D9531E`, Smoked Chipotle `#7A2420`, Rosemary & Garlic `#7F936B`) appear only on flavor elements.
+  Flavor band colors (Sea Salt `#4A2416`, Nashville Hot `#7A2420`, Rosemary Garlic `#3F4A2E`) appear only on flavor elements.
 - Type: Schibsted Grotesk (bold) for headlines, Instrument Sans for body, DM Mono for label-style text. The TALLO logo wordmark is chunky Fraunces Black, drawn as an SVG in `components/logo.tsx`; don't redraw it in a font.
 - Look: clean and light. Mostly cream/white backgrounds, thin borders, rounded corners, pill buttons. Dark green mainly for the film and footer.
 - Voice: plain and confident. Name the ingredient instead of using adjectives. No health claims.

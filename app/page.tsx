@@ -52,8 +52,8 @@ const CHAPTERS: Chapter[] = [
 
 const FLAVORS: { id: Flavor; name: string; note: string; pairs: string }[] = [
   { id: "sea-salt", name: "Sea Salt", note: "The original. Sweet potato, tallow, salt, crunch.", pairs: "Burgers, a cold drink, a long drive" },
-  { id: "smoked-chipotle", name: "Smoked Chipotle", note: "Slow smoky heat that builds, then gives way to the sweet.", pairs: "Tailgates, tacos, game night" },
-  { id: "rosemary-garlic", name: "Rosemary & Garlic", note: "Herby and savory, a little Sunday roast on a chip.", pairs: "Cheese boards, steak night, wine" },
+  { id: "nashville-hot", name: "Nashville Hot", note: "Cayenne heat with a touch of sweet, Nashville style.", pairs: "Game day, wings night, a cold drink" },
+  { id: "rosemary-garlic", name: "Rosemary Garlic", note: "Herby and savory, a little Sunday roast on a chip.", pairs: "Cheese boards, steak night, wine" },
 ];
 
 const FAQ = [
@@ -86,12 +86,12 @@ export default function Home() {
           <div className="t-wrap t-bag">
             <figure className="t-bag__figure">
               <img
-                src="/assets/img/pouch.webp"
-                srcSet="/assets/img/pouch-sm.webp 800w, /assets/img/pouch.webp 1600w"
+                src="/assets/img/bag-sea-salt.webp"
+                srcSet="/assets/img/bag-sea-salt-sm.webp 800w, /assets/img/bag-sea-salt.webp 896w"
                 sizes="(max-width: 860px) 100vw, 50vw"
-                alt="Tallo Sea Salt stand-up pouch with sweet potato chips and a whole sweet potato"
-                width={1600}
-                height={2000}
+                alt="Sea Salt stand-up pouch, cream with a brown band"
+                width={896}
+                height={1120}
               />
             </figure>
             <div className="t-bag__copy">
@@ -126,9 +126,9 @@ export default function Home() {
                 src="/assets/img/lineup.webp"
                 srcSet="/assets/img/lineup-sm.webp 800w, /assets/img/lineup.webp 1600w"
                 sizes="(max-width: 1200px) 100vw, 1200px"
-                alt="Tallo Sea Salt, Smoked Chipotle, and Rosemary and Garlic stand-up pouches side by side"
+                alt="Sea Salt, Nashville Hot, and Rosemary Garlic stand-up pouches side by side"
                 width={1600}
-                height={905}
+                height={904}
               />
             </figure>
             <ul className="t-flavors">

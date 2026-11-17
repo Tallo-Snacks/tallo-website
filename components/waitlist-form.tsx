@@ -2,13 +2,13 @@
 
 import { useEffect, useState, type FormEvent } from "react";
 
-export type Flavor = "sea-salt" | "smoked-chipotle" | "rosemary-garlic" | "all";
+export type Flavor = "sea-salt" | "nashville-hot" | "rosemary-garlic" | "all";
 export const FLAVOR_EVENT = "tallo:flavor";
 
 const OPTIONS: { value: Flavor; label: string }[] = [
   { value: "sea-salt", label: "Sea Salt" },
-  { value: "smoked-chipotle", label: "Smoked Chipotle" },
-  { value: "rosemary-garlic", label: "Rosemary & Garlic" },
+  { value: "nashville-hot", label: "Nashville Hot" },
+  { value: "rosemary-garlic", label: "Rosemary Garlic" },
   { value: "all", label: "One of each" },
 ];
 

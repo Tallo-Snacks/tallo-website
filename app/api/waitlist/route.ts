@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 
 import { db } from "@/lib/supabase";
 
-const FLAVORS = new Set(["sea-salt", "smoked-chipotle", "rosemary-garlic", "all"]);
+const FLAVORS = new Set(["sea-salt", "nashville-hot", "rosemary-garlic", "all"]);
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
 export async function POST(req: Request) {

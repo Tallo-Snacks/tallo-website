@@ -16,9 +16,9 @@ const COLORS = [
   { name: "Yam", hex: "#E8641E", use: "The one accent. Wordmark, key actions", ink: "#0F1F17" },
 ];
 const FLAVOR_COLORS = [
-  { name: "Sea Salt band", hex: "#D9531E" },
-  { name: "Smoked Chipotle band", hex: "#7A2420" },
-  { name: "Rosemary & Garlic band", hex: "#7F936B" },
+  { name: "Sea Salt band", hex: "#4A2416" },
+  { name: "Nashville Hot band", hex: "#7A2420" },
+  { name: "Rosemary Garlic band", hex: "#3F4A2E" },
 ];
 const VOICE = [
   { rule: "Say the ingredient, not the adjective.", yes: "Cooked in grass-fed beef tallow.", no: "Crafted with premium artisanal fats." },
@@ -130,12 +130,12 @@ export default function BrandPage() {
             <h2 id="pack-title" className="t-h2">Packaging</h2>
             <p className="t-brand__note t-brand__note--dark">
               8 oz full-size stand-up pouch with a flat gusseted bottom, press-to-close zip, and tear notch. Matte paper-texture
-              stock, Yam wordmark at the top, mark centered, flavor band across the bottom with the organic seal.
+              cream stock, serif wordmark, gold details, and a slanted flavor band across the bottom with the flavor name in gold.
             </p>
             <div className="t-pack-grid">
-              <img src="/assets/img/lineup.webp" alt="All three Tallo pouches" width={1600} height={905} loading="lazy" />
-              <img src="/assets/img/pouch-sm.webp" alt="Tallo Sea Salt pouch, front" width={800} height={1000} loading="lazy" />
-              <img src="/assets/img/pouch-open-sm.webp" alt="Tallo pouch, three-quarter view, opened" width={800} height={1000} loading="lazy" />
+              <img src="/assets/img/lineup.webp" alt="All three pouches" width={1600} height={904} loading="lazy" />
+              <img src="/assets/img/bag-nashville-hot-sm.webp" alt="Nashville Hot pouch, front" width={800} height={1000} loading="lazy" />
+              <img src="/assets/img/bag-rosemary-garlic-sm.webp" alt="Rosemary Garlic pouch, front" width={800} height={1000} loading="lazy" />
             </div>
           </div>
         </section>

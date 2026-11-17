@@ -81,8 +81,8 @@ revoke execute on function public.decrement_stock(text, integer) from public, an
 
 insert into public.products (id, name, kind, price_cents, bags_per_unit, stock, sort) values
   ('sea-salt', 'Sea Salt', 'bag', 1099, 1, 500, 1),
-  ('smoked-chipotle', 'Smoked Chipotle', 'bag', 1099, 1, 500, 2),
-  ('rosemary-garlic', 'Rosemary & Garlic', 'bag', 1099, 1, 500, 3),
+  ('nashville-hot', 'Nashville Hot', 'bag', 1099, 1, 500, 2),
+  ('rosemary-garlic', 'Rosemary Garlic', 'bag', 1099, 1, 500, 3),
   ('sampler-3', 'The Sampler (one of each)', 'bundle', 2999, 3, 0, 4),
   ('pack-6', '6-Pack (two of each)', 'bundle', 5499, 6, 0, 5)
 on conflict (id) do nothing;
