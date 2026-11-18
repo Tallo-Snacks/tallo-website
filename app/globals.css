@@ -430,10 +430,11 @@ body { background: var(--t-pasture); font-family: var(--t-body); color: var(--t-
 .t-ingredient p { margin: 0; color: var(--t-on-dark-muted); max-width: 34ch; }
 
 @media (max-width: 860px) {
-  .t-hero { align-items: flex-start; min-height: 100svh; }
-  .t-hero__img img { object-position: center bottom; }
-  .t-hero::after { background: linear-gradient(180deg, color-mix(in srgb, var(--t-pasture) 70%, transparent) 0%, transparent 45%); }
-  .t-hero__inner { padding-top: 5.5rem; }
+  .t-hero { flex-direction: column; align-items: stretch; min-height: 0; }
+  .t-hero::after { display: none; }
+  .t-hero__img { position: relative; order: 2; }
+  .t-hero__img img { height: auto !important; aspect-ratio: 4 / 5; object-position: center bottom; }
+  .t-hero__inner { order: 1; padding-top: 5.5rem; padding-bottom: 1.5rem; }
   .t-ingredients { grid-template-columns: 1fr; }
 }
 .t-nav[data-on-dark="false"] .t-lockup__mark, .t-nav[data-on-dark="false"] .t-wordmark { color: var(--t-maroon); }
