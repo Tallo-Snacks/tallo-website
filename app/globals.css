@@ -413,10 +413,10 @@ body { background: var(--t-pasture); font-family: var(--t-body); color: var(--t-
 .t-hero__img img { width: 100%; height: 100% !important; object-fit: cover; object-position: 70% 60%; }
 .t-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, color-mix(in srgb, var(--t-pasture) 55%, transparent) 0%, transparent 52%); pointer-events: none; }
 .t-hero__inner { position: relative; z-index: 1; padding-top: 6rem; padding-bottom: 4rem; }
-.t-hero__copy { max-width: 34rem; }
+.t-hero__copy { max-width: 31rem; }
 .t-hero__kicker { font-family: var(--t-mono); text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.8rem; color: var(--t-yam); margin: 0 0 1rem; }
 .t-hero__title { font-family: var(--t-display); font-weight: 700; font-size: clamp(2.6rem, 6vw, 4.8rem); line-height: 1.02; letter-spacing: -0.01em; margin: 0 0 1.2rem; text-wrap: balance; }
-.t-hero__lede { font-size: 1.2rem; margin: 0 0 1.75rem; max-width: 30rem; color: color-mix(in srgb, var(--t-paper) 92%, transparent); }
+.t-hero__lede { font-size: 1.2rem; margin: 0 0 1.75rem; max-width: 25rem; color: color-mix(in srgb, var(--t-paper) 92%, transparent); }
 .t-hero__tags { list-style: none; padding: 0; margin: 1.6rem 0 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
 .t-hero__tags li { font-family: var(--t-mono); font-size: 0.78rem; padding: 0.3rem 0.65rem; border: 1px solid color-mix(in srgb, var(--t-yam) 70%, transparent); border-radius: 999px; color: var(--t-paper); }
 .t-hero .t-arrow-link { color: var(--t-paper); }
