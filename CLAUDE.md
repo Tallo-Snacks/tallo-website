@@ -17,10 +17,10 @@ The two founders edit it through Claude Code / Cowork and are not developers, so
 - Photos: `public/assets/img/` (each has a full size and a `-sm` version)
 
 ## Brand rules (keep these when editing)
-- Palette: Pasture `#0F1F17`, Butter `#F7E7B4`, Paper `#FBF3DF`, Yam `#E8641E` (the only accent).
+- Palette (Nov 2026, matches the TALO bag): deep maroon `#3A1214` (dark bands, nav, footer), maroon `#5A1416` (headlines), cream `#F3E9D8`, paper `#FBF5EA`, gold `#C69A4A` (accent). CSS variable names still say pasture/butter/yam.
   Flavor band colors (Sea Salt `#4A2416`, Nashville Hot `#7A2420`, Rosemary Garlic `#3F4A2E`) appear only on flavor elements.
-- Type: Schibsted Grotesk (bold) for headlines, Instrument Sans for body, DM Mono for label-style text. The TALLO logo wordmark is chunky Fraunces Black, drawn as an SVG in `components/logo.tsx`; don't redraw it in a font.
-- Look: clean and light. Mostly cream/white backgrounds, thin borders, rounded corners, pill buttons. Dark green mainly for the film and footer.
+- Type: Libre Caslon Text (bold serif, matches the bag) for headlines, Instrument Sans for body, DM Mono for label-style text. The TALLO logo wordmark is chunky Fraunces Black, drawn as an SVG in `components/logo.tsx`; don't redraw it in a font.
+- Look: warm and upscale. Cream backgrounds, deep maroon bands, gold details, thin borders, rounded corners, pill buttons. The home page hero is a photo (the scroll film component is no longer used on the home page).
 - Voice: plain and confident. Name the ingredient instead of using adjectives. No health claims.
 - Imagery must look clean, dry, and crisp. Avoid greasy, glistening, frying, or oil-dripping visuals;
   the founders heard this turns off customers, especially older shoppers.
