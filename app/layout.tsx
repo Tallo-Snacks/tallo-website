@@ -11,18 +11,18 @@ const body = Instrument_Sans({ subsets: ["latin"], variable: "--font-body", disp
 const mono = DM_Mono({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-mono", display: "swap" });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://tallo-site.vercel.app"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://tallo-website.vercel.app"),
   title: "Tallo | Sweet potato chips cooked in beef tallow",
   description:
     "Organic sweet potatoes, grass-fed beef tallow, and sea salt. Three ingredients, kettle cooked, no seed oils.",
-  icons: { icon: "/assets/brand/favicon.svg" },
+  icons: { icon: "/assets/brand/favicon.svg", apple: "/assets/brand/apple-touch-icon.png" },
   openGraph: {
     title: "Tallo | Sweet potato chips cooked in beef tallow",
     description: "Three ingredients. Not one more.",
-    images: ["/assets/img/og.jpg"],
+    images: ["/assets/img/og-v2.jpg"],
     type: "website",
   },
-  twitter: { card: "summary_large_image", images: ["/assets/img/og.jpg"] },
+  twitter: { card: "summary_large_image", images: ["/assets/img/og-v2.jpg"] },
 };
 
 export const viewport: Viewport = { themeColor: "#3A1214" };
