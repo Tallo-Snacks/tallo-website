@@ -1,12 +1,12 @@
 import type { Metadata, Viewport } from "next";
-import { DM_Mono, Instrument_Sans, Schibsted_Grotesk } from "next/font/google";
+import { DM_Mono, Instrument_Sans, Libre_Caslon_Text } from "next/font/google";
 
 import { CartProvider } from "@/components/cart";
 import { storeOpen } from "@/lib/stripe";
 
 import "./globals.css";
 
-const display = Schibsted_Grotesk({ subsets: ["latin"], variable: "--font-display", display: "swap" });
+const display = Libre_Caslon_Text({ subsets: ["latin"], weight: ["400", "700"], variable: "--font-display", display: "swap" });
 const body = Instrument_Sans({ subsets: ["latin"], variable: "--font-body", display: "swap" });
 const mono = DM_Mono({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-mono", display: "swap" });
 
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", images: ["/assets/img/og.jpg"] },
 };
 
-export const viewport: Viewport = { themeColor: "#0F1F17" };
+export const viewport: Viewport = { themeColor: "#3A1214" };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

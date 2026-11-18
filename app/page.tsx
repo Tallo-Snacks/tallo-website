@@ -2,53 +2,9 @@ import { FlavorPick } from "@/components/flavor-pick";
 import { AddToBag } from "@/components/cart";
 import { storeOpen } from "@/lib/stripe";
 import { TalloMark } from "@/components/logo";
-import { ScrollFilm, type Chapter } from "@/components/scroll-film";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteNav } from "@/components/site-nav";
 import { WaitlistForm, type Flavor } from "@/components/waitlist-form";
-
-const CHAPTERS: Chapter[] = [
-  {
-    id: "start",
-    kicker: "Organic sweet potato",
-    title: "Three ingredients. Not one more.",
-    body: "Organic sweet potatoes, grass-fed beef tallow, and sea salt. That is the whole bag.",
-    tags: ["No seed oils", "Organic potatoes", "Kettle cooked"],
-    align: "left",
-  },
-  {
-    id: "slice",
-    kicker: "Sliced thick",
-    title: "It starts with a real sweet potato.",
-    body: "Whole organic sweet potatoes, washed and sliced thick so every chip keeps its natural sweetness.",
-    align: "right",
-  },
-  {
-    id: "crisp",
-    kicker: "Grass-fed beef tallow",
-    title: "A clean, traditional fat.",
-    body: "We cook in grass-fed beef tallow instead of seed oils. It's the fat kitchens used for generations, and it gives a light, dry crunch.",
-    tags: ["No canola", "No sunflower", "No soybean"],
-    align: "left",
-  },
-  {
-    id: "salt",
-    kicker: "Finished with sea salt",
-    title: "Crunch worth reading the label for.",
-    body: "Flip the bag over. You will recognize every word on it.",
-    actions: (
-      <div className="t-chapter-actions">
-        <a href={process.env.NEXT_PUBLIC_STORE_OPEN === "true" ? "/shop" : "#waitlist"} className="t-tear-cta">
-          Get the first batch
-        </a>
-        <a href="#flavors" className="t-arrow-link">
-          See the flavors
-        </a>
-      </div>
-    ),
-    align: "right",
-  },
-];
 
 const FLAVORS: { id: Flavor; name: string; note: string; pairs: string }[] = [
   { id: "sea-salt", name: "Sea Salt", note: "The original. Sweet potato, tallow, salt, crunch.", pairs: "Burgers, a cold drink, a long drive" },
@@ -74,13 +30,65 @@ export default function Home() {
     <div className="t-site">
       <SiteNav />
       <main>
-        <ScrollFilm
-          chapters={CHAPTERS}
-          src="/assets/film/film.mp4"
-          mobileSrc="/assets/film/film-mobile.mp4"
-          poster="/assets/film/poster.jpg"
-          mobilePoster="/assets/film/poster-mobile.jpg"
-        />
+        <section className="t-hero" aria-labelledby="hero-title">
+          <picture className="t-hero__img">
+            <source media="(max-width: 860px)" srcSet="/assets/img/hero-mobile.webp" />
+            <img
+              src="/assets/img/hero.webp"
+              srcSet="/assets/img/hero-sm.webp 1200w, /assets/img/hero.webp 2400w"
+              sizes="100vw"
+              alt="A Sea Salt bag of sweet potato chips beside a pile of chips with flaky salt, a crock of white beef tallow, and a whole sweet potato"
+              width={2400}
+              height={1344}
+              fetchPriority="high"
+            />
+          </picture>
+          <div className="t-wrap t-hero__inner">
+            <div className="t-hero__copy">
+              <p className="t-hero__kicker">Organic sweet potato · Grass-fed beef tallow · Sea salt</p>
+              <h1 id="hero-title" className="t-hero__title">Three ingredients. Not one more.</h1>
+              <p className="t-hero__lede">Thick-cut sweet potatoes, kettle cooked in grass-fed beef tallow and finished with flaky sea salt.</p>
+              <div className="t-chapter-actions">
+                <a href={open ? "/shop" : "#waitlist"} className="t-tear-cta">Get the first batch</a>
+                <a href="#flavors" className="t-arrow-link">See the flavors</a>
+              </div>
+              <ul className="t-hero__tags">
+                <li>No seed oils</li>
+                <li>Organic potatoes</li>
+                <li>Kettle cooked</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section className="t-band t-band--pasture" aria-labelledby="inside-title">
+          <div className="t-wrap">
+            <div className="t-section-head">
+              <p className="t-eyebrow">What goes in</p>
+              <h2 id="inside-title" className="t-h2">You can count the ingredients on one hand. With fingers to spare.</h2>
+            </div>
+            <ol className="t-ingredients">
+              <li className="t-ingredient">
+                <img src="/assets/img/ing-potato-sm.webp" alt="A whole sweet potato, thick raw slices, crisp chips, a dish of tallow, and flaky salt on cream linen" width={800} height={1000} loading="lazy" />
+                <span className="t-ingredient__num">01 · Organic sweet potato</span>
+                <h3>A real sweet potato, sliced thick.</h3>
+                <p>Whole organic sweet potatoes, washed and cut thick so every chip keeps its natural sweetness.</p>
+              </li>
+              <li className="t-ingredient">
+                <img src="/assets/img/ing-tallow-sm.webp" alt="A stoneware crock of firm white beef tallow with a wooden spoon beside sliced sweet potatoes" width={800} height={1000} loading="lazy" />
+                <span className="t-ingredient__num">02 · Grass-fed beef tallow</span>
+                <h3>Cooked in tallow, not seed oil.</h3>
+                <p>The traditional fat kitchens used for generations. It holds up in the kettle and gives a light, dry crunch.</p>
+              </li>
+              <li className="t-ingredient">
+                <img src="/assets/img/ing-salt-sm.webp" alt="Fingers sprinkling flaky sea salt over a pile of crisp sweet potato chips" width={800} height={1000} loading="lazy" />
+                <span className="t-ingredient__num">03 · Sea salt</span>
+                <h3>Finished with flaky sea salt.</h3>
+                <p>A light pinch right out of the kettle, so you taste the potato first.</p>
+              </li>
+            </ol>
+          </div>
+        </section>
 
         <section className="t-band t-band--butter" id="bag" aria-labelledby="bag-title">
           <div className="t-wrap t-bag">
@@ -119,16 +127,17 @@ export default function Home() {
           <div className="t-wrap">
             <div className="t-section-head">
               <p className="t-eyebrow">The lineup</p>
-              <h2 id="flavors-title" className="t-h2">Three bags. Same three-ingredient rule.</h2>
+              <h2 id="flavors-title" className="t-h2">Three bags. Same short label.</h2>
             </div>
             <figure className="t-lineup">
               <img
-                src="/assets/img/lineup.webp"
-                srcSet="/assets/img/lineup-sm.webp 800w, /assets/img/lineup.webp 1600w"
+                src="/assets/img/lineup-scene.webp"
+                srcSet="/assets/img/lineup-scene-sm.webp 1200w, /assets/img/lineup-scene.webp 2400w"
                 sizes="(max-width: 1200px) 100vw, 1200px"
-                alt="Sea Salt, Nashville Hot, and Rosemary Garlic stand-up pouches side by side"
-                width={1600}
-                height={904}
+                alt="Sea Salt, Nashville Hot, and Rosemary Garlic bags side by side with chips, chili flakes, and rosemary"
+                width={2400}
+                height={1344}
+                loading="lazy"
               />
             </figure>
             <ul className="t-flavors">
@@ -172,27 +181,6 @@ export default function Home() {
               <img className="t-why__img" src="/assets/img/farm-sm.webp" alt="A crate of freshly dug sweet potatoes with grass-fed cattle grazing behind" width={800} height={1000} loading="lazy" />
               <img className="t-why__img t-why__img--b" src="/assets/img/chip-hand-sm.webp" alt="A hand holding up a single crisp sweet potato chip in soft daylight" width={800} height={1000} loading="lazy" />
             </div>
-          </div>
-        </section>
-
-        <section className="t-label-hero" aria-labelledby="label-title">
-          <img
-            className="t-label-hero__img"
-            src="/assets/img/ingredients.webp"
-            srcSet="/assets/img/ingredients-sm.webp 800w, /assets/img/ingredients.webp 1600w"
-            sizes="100vw"
-            alt="A whole sweet potato, raw slices, a dish of white beef tallow, and a pile of sea salt"
-            width={1600}
-            height={2000}
-            loading="lazy"
-          />
-          <div className="t-wrap t-label-hero__inner">
-            <h2 id="label-title" className="t-label-hero__title">The whole label.</h2>
-            <ol className="t-label-hero__list">
-              <li><span className="t-mono">Sweet potato</span> Organic, sliced thick, skin on the edges.</li>
-              <li><span className="t-mono">Beef tallow</span> From grass-fed cattle, rendered clean.</li>
-              <li><span className="t-mono">Sea salt</span> A light dusting, right after cooking.</li>
-            </ol>
           </div>
         </section>
 
