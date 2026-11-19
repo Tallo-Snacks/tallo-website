@@ -448,8 +448,8 @@ body { background: var(--t-pasture); font-family: var(--t-body); color: var(--t-
 /* Logo */
 .t-mark { display: block; }
 .t-lockup { gap: 0.6rem; }
-.t-lockup__mark { width: auto; height: 1.6rem; color: inherit; }
-.t-wordmark { height: auto; font-family: var(--t-display); font-weight: 700; font-size: 1.15rem; letter-spacing: 0.32em; margin-right: -0.32em; line-height: 1; color: var(--t-maroon); }
+.t-lockup__mark { width: auto; height: 2rem; color: inherit; }
+.t-wordmark { height: auto; font-family: var(--t-display); font-weight: 700; font-size: 1.3rem; letter-spacing: 0.3em; margin-right: -0.3em; line-height: 1; color: var(--t-maroon); }
 
 /* Nav: light, thin, always the same */
 .t-nav, .t-nav[data-on-dark="false"] {
@@ -493,7 +493,7 @@ body { background: var(--t-pasture); font-family: var(--t-body); color: var(--t-
 .t-band { padding-block: clamp(5rem, 10vw, 8.5rem); }
 .t-band--butter + .t-band--butter, .t-band--white + .t-band--white, .t-band--paper + .t-band--paper { border-top: 1px solid var(--t-hair); }
 .t-band--white { background: var(--t-paper); }
-.t-section-head { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 1rem 2rem; padding-bottom: 1.6rem; margin-bottom: 2.5rem; border-bottom: 1px solid var(--t-hair); }
+.t-section-head { display: block; padding-bottom: 1.6rem; margin-bottom: 2.5rem; border-bottom: 1px solid var(--t-hair); }
 .t-section-head .t-h2 { margin-bottom: 0; }
 .t-band--pasture .t-section-head { border-bottom-color: var(--t-hair-dark); }
 
