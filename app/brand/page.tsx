@@ -10,10 +10,10 @@ export const metadata: Metadata = {
 };
 
 const COLORS = [
-  { name: "Pasture", hex: "#0F1F17", use: "Dark bands, film backdrop, text on light", ink: "#FBF3DF" },
-  { name: "Butter", hex: "#F7E7B4", use: "Light bands and cards", ink: "#0F1F17" },
-  { name: "Paper", hex: "#FBF3DF", use: "Pouch stock, text on dark", ink: "#0F1F17" },
-  { name: "Yam", hex: "#E8641E", use: "The one accent. Wordmark, key actions", ink: "#0F1F17" },
+  { name: "Deep maroon", hex: "#3A1214", use: "Dark bands, footer, the hero wall", ink: "#FBF5EA" },
+  { name: "Maroon", hex: "#5A1416", use: "Headlines, the name, outline buttons", ink: "#FBF5EA" },
+  { name: "Cream", hex: "#F3E9D8", use: "Pouch stock and light bands", ink: "#2B1214" },
+  { name: "Gold", hex: "#C69A4A", use: "The sunrise, fine accents, the main button", ink: "#2B1214" },
 ];
 const FLAVOR_COLORS = [
   { name: "Sea Salt band", hex: "#4A2416" },
@@ -27,12 +27,9 @@ const VOICE = [
   { rule: "No health claims we can't back up.", yes: "No seed oils.", no: "Boosts metabolism and heart health." },
 ];
 const DOWNLOADS = [
-  { file: "/assets/brand/tallo-lockup-yam.svg", label: "Lockup, Yam" },
-  { file: "/assets/brand/tallo-lockup-pasture.svg", label: "Lockup, Pasture" },
-  { file: "/assets/brand/tallo-lockup-paper.svg", label: "Lockup, Paper (for dark)" },
-  { file: "/assets/brand/tallo-wordmark-yam.svg", label: "Wordmark, Yam" },
-  { file: "/assets/brand/tallo-mark-pasture.svg", label: "Mark, Pasture" },
-  { file: "/assets/brand/tallo-mark-yam.svg", label: "Mark, Yam" },
+  { file: "/assets/brand/talo-emblem.svg", label: "Sunrise emblem, for light backgrounds" },
+  { file: "/assets/brand/talo-emblem-reversed.svg", label: "Sunrise emblem, for dark backgrounds" },
+  { file: "/assets/brand/favicon.svg", label: "App icon" },
 ];
 
 export default function BrandPage() {
@@ -42,8 +39,9 @@ export default function BrandPage() {
       <main>
         <section className="t-band t-band--butter t-brand__hero">
           <div className="t-wrap">
-            <p className="t-eyebrow">Brand kit · v1 · October 2026</p>
-            <h1 className="t-brand__title"><span className="t-sr">Tallo</span><TalloWordmark className="t-brand__wordmark" /></h1>
+            <p className="t-eyebrow">Brand kit · v2 · November 2026</p>
+            <TalloMark className="t-brand__emblem" title="" />
+            <h1 className="t-brand__title"><TalloWordmark className="t-brand__wordmark" /></h1>
             <p className="t-lede">
               Organic sweet potato chips, kettle cooked in grass-fed beef tallow. This page is the source of truth for
               how Tallo looks and sounds.
@@ -55,14 +53,14 @@ export default function BrandPage() {
           <div className="t-wrap">
             <h2 id="logo-title" className="t-h2">Logo</h2>
             <p className="t-brand__note">
-              The mark is a sweet potato wearing a pair of cow horns: both halves of the product in one line drawing.
-              Use the lockup by default and the mark alone at small sizes (favicon, stickers, the pouch seal).
+              The sunrise from the top of the bag: gold rays over two leaves, with a fine line on each side. Use it
+              small and quiet. In the site header it sits next to the name; alone it works as the app icon and a seal.
             </p>
             <div className="t-logo-grid">
-              <div className="t-logo-tile t-logo-tile--butter"><TalloLockup className="t-logo-tile__lockup" /><span className="t-mono">Primary lockup on Butter</span></div>
-              <div className="t-logo-tile t-logo-tile--pasture"><TalloLockup className="t-logo-tile__lockup" /><span className="t-mono">Reversed on Pasture</span></div>
-              <div className="t-logo-tile t-logo-tile--yam"><TalloWordmark className="t-logo-tile__word" /><span className="t-mono">Wordmark on Yam</span></div>
-              <div className="t-logo-tile t-logo-tile--paper"><TalloMark className="t-logo-tile__mark" /><span className="t-mono">Mark alone, 24px and up</span></div>
+              <div className="t-logo-tile t-logo-tile--butter"><TalloLockup className="t-logo-tile__lockup" /><span className="t-mono">Header lockup on cream</span></div>
+              <div className="t-logo-tile t-logo-tile--pasture"><TalloLockup className="t-logo-tile__lockup" /><span className="t-mono">Reversed on deep maroon</span></div>
+              <div className="t-logo-tile t-logo-tile--paper"><TalloMark className="t-logo-tile__mark" /><span className="t-mono">Emblem with lines</span></div>
+              <div className="t-logo-tile t-logo-tile--yam"><img src="/assets/brand/favicon.svg" alt="" width={96} height={96} /><span className="t-mono">App icon</span></div>
             </div>
             <ul className="t-downloads">
               {DOWNLOADS.map((d) => (
@@ -78,8 +76,8 @@ export default function BrandPage() {
           <div className="t-wrap">
             <h2 id="color-title" className="t-h2">Color</h2>
             <p className="t-brand__note">
-              Pasture, Butter, and Yam come straight from the supply chain: green grass, rendered tallow, orange sweet
-              potato. Yam is the only accent. Flavor colors live on the pouch bands only.
+              Taken from the bag: cream stock, maroon type, and a gold sunrise. Gold is the only accent. Flavor colors
+              live on the pouch bands and flavor buttons only.
             </p>
             <ul className="t-swatches">
               {COLORS.map((c) => (
@@ -102,7 +100,7 @@ export default function BrandPage() {
           <div className="t-wrap">
             <h2 id="type-title" className="t-h2">Type</h2>
             <div className="t-type-grid">
-              <div className="t-type-card"><span className="t-mono">Headlines · Schibsted Grotesk Bold</span><p className="t-type-card__display">A clean, traditional fat.</p></div>
+              <div className="t-type-card"><span className="t-mono">Headlines · Libre Caslon Text</span><p className="t-type-card__display">A clean, traditional fat.</p></div>
               <div className="t-type-card"><span className="t-mono">Body · Instrument Sans</span><p className="t-type-card__body">Thick-cut, kettle-cooked sweet potato chips in a pouch that stands on the shelf and zips shut.</p></div>
               <div className="t-type-card"><span className="t-mono">Label · DM Mono</span><p className="t-mono t-type-card__mono">INGREDIENTS: ORGANIC SWEET POTATOES, GRASS-FED BEEF TALLOW, SEA SALT.</p></div>
             </div>

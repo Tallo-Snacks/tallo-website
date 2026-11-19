@@ -438,3 +438,142 @@ body { background: var(--t-pasture); font-family: var(--t-body); color: var(--t-
   .t-ingredients { grid-template-columns: 1fr; }
 }
 .t-nav[data-on-dark="false"] .t-lockup__mark, .t-nav[data-on-dark="false"] .t-wordmark { color: var(--t-maroon); }
+
+/* ===================================================================
+   Modern pass (Nov 2026): hairlines, quieter cards, light nav,
+   sunrise emblem logo. Overrides earlier rules on purpose.
+   =================================================================== */
+:root { --t-radius: 8px; --t-hair: color-mix(in srgb, var(--t-maroon) 18%, transparent); --t-hair-dark: color-mix(in srgb, var(--t-paper) 16%, transparent); }
+
+/* Logo */
+.t-mark { display: block; }
+.t-lockup { gap: 0.6rem; }
+.t-lockup__mark { width: auto; height: 1.6rem; color: inherit; }
+.t-wordmark { height: auto; font-family: var(--t-display); font-weight: 700; font-size: 1.15rem; letter-spacing: 0.32em; margin-right: -0.32em; line-height: 1; color: var(--t-maroon); }
+
+/* Nav: light, thin, always the same */
+.t-nav, .t-nav[data-on-dark="false"] {
+  background: color-mix(in srgb, var(--t-paper) 86%, transparent);
+  color: var(--t-ink); border-bottom: 1px solid var(--t-hair);
+  backdrop-filter: saturate(1.2) blur(14px); -webkit-backdrop-filter: saturate(1.2) blur(14px);
+}
+.t-nav__inner { padding-block: 0.85rem; }
+.t-nav__links { gap: 2rem; font-size: 0.9rem; letter-spacing: 0.01em; }
+.t-nav__links a { opacity: 0.75; }
+.t-nav__links a:hover { opacity: 1; text-decoration: none; }
+.t-nav[data-on-dark="false"] .t-lockup__mark, .t-nav[data-on-dark="false"] .t-wordmark { color: var(--t-maroon); }
+.t-tag-cta {
+  clip-path: none; background: transparent; color: var(--t-maroon) !important; border: 1px solid var(--t-maroon);
+  border-radius: 999px; padding: 0.5rem 1rem; font-size: 0.75rem; letter-spacing: 0.14em; transition: background 0.2s ease, color 0.2s ease;
+}
+.t-tag-cta::before { display: none; }
+.t-tag-cta:hover { transform: none; background: var(--t-maroon); color: var(--t-paper) !important; }
+.t-cart-btn { background: transparent; color: var(--t-maroon); border: 1px solid var(--t-maroon); }
+.t-cart-btn__count { background: var(--t-maroon); }
+
+/* Buttons */
+.t-tear-cta { border: 0; padding: 0.95rem 1.6rem; font-weight: 600; letter-spacing: 0.01em; transition: background 0.2s ease, transform 0.2s ease; }
+.t-tear-cta:hover { padding-inline: 1.6rem; background: #D4AA5C; transform: translateY(-1px); }
+.t-band-cta, .t-add-cta { font-weight: 600; font-size: 0.95rem; letter-spacing: 0.01em; }
+.t-band-cta:hover { letter-spacing: 0.01em; }
+.t-slab-cta { font-family: var(--t-body); font-weight: 600; font-size: 1rem; background: var(--t-maroon); }
+.t-slab-cta:hover { background: var(--t-pasture); }
+
+/* Type */
+.t-h2, .t-hero__title, .t-label-hero__title, .t-brand__title { font-weight: 400; }
+.t-h2 { font-size: clamp(2.1rem, 4.4vw, 3.5rem); line-height: 1.08; max-width: 18ch; }
+.t-hero__title { font-size: clamp(2.8rem, 6.2vw, 5rem); line-height: 1.02; }
+.t-flavor__name, .t-ingredient h3, .t-product h3, .t-drawer__head h2 { font-weight: 400; }
+.t-eyebrow, .t-hero__kicker { display: flex; align-items: center; gap: 0.75rem; font-size: 0.72rem; letter-spacing: 0.18em; }
+.t-eyebrow::before, .t-hero__kicker::before { content: ""; width: 2rem; height: 1px; background: currentColor; opacity: 0.7; flex: none; }
+.t-lede { color: var(--t-ink-soft); }
+.t-band--pasture .t-lede, .t-hero .t-lede { color: var(--t-on-dark-muted); }
+
+/* Sections: more air, hairline dividers */
+.t-band { padding-block: clamp(5rem, 10vw, 8.5rem); }
+.t-band--butter + .t-band--butter, .t-band--white + .t-band--white, .t-band--paper + .t-band--paper { border-top: 1px solid var(--t-hair); }
+.t-band--white { background: var(--t-paper); }
+.t-section-head { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 1rem 2rem; padding-bottom: 1.6rem; margin-bottom: 2.5rem; border-bottom: 1px solid var(--t-hair); }
+.t-section-head .t-h2 { margin-bottom: 0; }
+.t-band--pasture .t-section-head { border-bottom-color: var(--t-hair-dark); }
+
+/* Hero */
+.t-hero::after { background: linear-gradient(90deg, color-mix(in srgb, var(--t-pasture) 45%, transparent) 0%, transparent 50%); }
+.t-hero__tags li { border-color: color-mix(in srgb, var(--t-paper) 30%, transparent); border-radius: 999px; font-size: 0.72rem; letter-spacing: 0.04em; }
+
+/* Ingredients */
+.t-ingredients { gap: 2rem; counter-reset: ing; }
+.t-ingredient { border-top: 1px solid var(--t-hair-dark); padding-top: 1.25rem; }
+.t-ingredient img { border-radius: 4px; margin-bottom: 1.4rem; }
+.t-ingredient h3 { font-size: 1.6rem; }
+
+/* Bag + specs */
+.t-bag__figure img { box-shadow: none; border-radius: 4px; }
+.t-specs { border-top: 1px solid var(--t-ink); }
+.t-specs div { border-bottom: 1px solid var(--t-hair); }
+.t-specs dd { font-weight: 500; }
+.t-label-box { border-radius: 4px; background: transparent; border-color: var(--t-hair); }
+.t-label-box .t-label-box__head { border-bottom-width: 1px; font-size: 0.95rem; letter-spacing: 0.12em; }
+
+/* Flavors */
+.t-lineup img { border-radius: 4px; }
+.t-flavors { gap: 1px; background: var(--t-hair); border: 1px solid var(--t-hair); border-radius: var(--t-radius); overflow: hidden; }
+.t-flavor { border: 0; border-radius: 0; background: var(--t-paper); padding-bottom: 1.6rem; }
+.t-flavor::before { height: 3px; }
+.t-flavor__name { font-size: 1.65rem; margin-top: 1.5rem; }
+
+/* Why tallow */
+.t-why__img { border-radius: 4px; }
+.t-compare thead th { border-bottom: 1px solid var(--t-ink); }
+.t-compare th, .t-compare td { border-bottom-color: var(--t-hair); }
+.t-compare tbody td:nth-child(2) { font-weight: 600; color: var(--t-maroon); }
+
+/* Mosaic */
+.t-mosaic img { border-radius: 4px; }
+
+/* FAQ */
+.t-faq__list { border-top: 1px solid var(--t-ink); }
+.t-faq__item { border-bottom-color: var(--t-hair); }
+.t-faq__item summary { font-weight: 500; font-size: 1.05rem; padding-block: 1.3rem; }
+.t-faq__item summary::after { font-family: var(--t-body); font-weight: 300; color: var(--t-maroon); top: 1.05rem; font-size: 1.4rem; }
+.t-faq__item p { color: var(--t-ink-soft); }
+
+/* Waitlist + forms */
+.t-band--yam { border-top: 1px solid var(--t-hair); }
+.t-waitlist__mark { width: 7rem; height: auto; margin-bottom: 1.5rem; }
+.t-waitlist .t-h2 { color: var(--t-maroon); }
+.t-form { box-shadow: none; border-color: var(--t-hair); border-radius: var(--t-radius); background: var(--t-card); }
+.t-chip span { border-color: var(--t-hair); }
+.t-chip input:checked + span { background: var(--t-maroon); border-color: var(--t-maroon); }
+.t-field input { border-color: var(--t-hair); border-radius: 6px; background: var(--t-paper); }
+.t-field input:focus { outline: none; border-color: var(--t-maroon); }
+
+/* Products + cart */
+.t-product { border-radius: var(--t-radius); border-color: var(--t-hair); border-top-width: 3px; }
+.t-drawer__head, .t-drawer__foot { border-color: var(--t-hair); border-width: 1px; }
+
+/* Footer */
+.t-footer { padding-block: 4rem 2.5rem; border-top: 0; }
+.t-footer .t-lockup__mark { height: 1.8rem; --mark-leaf: var(--t-paper); }
+.t-footer .t-wordmark { color: var(--t-paper); }
+.t-footer__inner { row-gap: 2rem; }
+.t-footer__line { font-size: 0.78rem; letter-spacing: 0.06em; }
+.t-footer__fine { border-top: 1px solid var(--t-hair-dark); padding-top: 1.5rem; font-size: 0.8rem; }
+.t-footer__nav { gap: 1.6rem; font-size: 0.9rem; }
+
+@media (max-width: 860px) {
+  .t-section-head { grid-template-columns: 1fr; }
+  .t-flavors { gap: 1px; }
+}
+/* Brand page, v2 */
+.t-brand__emblem { width: 9rem; height: auto; margin: 0 0 1.5rem; }
+.t-brand__wordmark { font-size: clamp(3rem, 11vw, 7.5rem); letter-spacing: 0.24em; margin-right: -0.24em; }
+.t-logo-tile { border: 1px solid var(--t-hair); }
+.t-logo-tile .t-lockup__mark { height: 2.6rem; }
+.t-logo-tile .t-wordmark { font-size: 1.7rem; }
+.t-logo-tile--pasture .t-wordmark { color: var(--t-paper); }
+.t-logo-tile--pasture .t-lockup__mark { --mark-leaf: var(--t-paper); }
+.t-logo-tile--yam { background: var(--t-butter); color: var(--t-ink); }
+.t-logo-tile__mark { width: 12rem; height: auto; }
+.t-swatch { border-color: var(--t-hair); }
+.t-dl { border-width: 1px; border-radius: 999px; padding: 0.5rem 1rem; }
