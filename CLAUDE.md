@@ -19,7 +19,9 @@ The two founders edit it through Claude Code / Cowork and are not developers, so
 ## Brand rules (keep these when editing)
 - Palette (Nov 2026, matches the TALO bag): deep maroon `#3A1214` (dark bands, nav, footer), maroon `#5A1416` (headlines), cream `#F3E9D8`, paper `#FBF5EA`, gold `#C69A4A` (accent). CSS variable names still say pasture/butter/yam.
   Flavor band colors (Sea Salt `#4A2416`, Nashville Hot `#7A2420`, Rosemary Garlic `#3F4A2E`) appear only on flavor elements.
-- Type: Libre Caslon Text (bold serif, matches the bag) for headlines, Instrument Sans for body, DM Mono for label-style text. The TALLO logo wordmark is chunky Fraunces Black, drawn as an SVG in `components/logo.tsx`; don't redraw it in a font.
+- Type: Libre Caslon Text (regular weight for big headlines) , Instrument Sans for body, DM Mono for small label text.
+- Logo (`components/logo.tsx`): the gold sunrise emblem from the top of the bag, next to the name set in Libre Caslon with wide letter spacing. Emblem colors come from CSS vars --mark-sun and --mark-leaf. Exports in `public/assets/brand/talo-emblem*.svg`; tab icon is `favicon.svg` plus `public/favicon.ico`.
+- Details: 1px hairlines (--t-hair), small radii, outline pill buttons, light cream nav.
 - Look: warm and upscale. Cream backgrounds, deep maroon bands, gold details, thin borders, rounded corners, pill buttons. The home page hero is a photo (the scroll film component is no longer used on the home page).
 - Voice: plain and confident. Name the ingredient instead of using adjectives. No health claims.
 - Imagery must look clean, dry, and crisp. Avoid greasy, glistening, frying, or oil-dripping visuals;
